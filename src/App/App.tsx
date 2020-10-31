@@ -1,11 +1,12 @@
 import React from 'react';
+import Routes from './routes'
 import logo from './assets/logo.svg';
-import Button from 'react-bootstrap/Button';
 import './App.css';
 
-function App() {
+export default function App() {
   return (
     <div className="App">
+      <Routes />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -19,10 +20,7 @@ function App() {
         >
           Learn React
         </a>
-        <Button variant="success">Success</Button>
       </header>
     </div>
   );
 }
-
-export default App;
