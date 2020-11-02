@@ -1,5 +1,4 @@
 import React from 'react';
-// import Routes from './routes'
 import logo from './assets/logo.svg';
 import {
   BrowserRouter as Router,
@@ -10,8 +9,11 @@ import './App.css';
 import { Navbar, Nav } from 'react-bootstrap'
 import Home from './containers/Home'
 import UsersList from './containers/UsersList'
+import UserPage from './containers/UserPage'
+import NotFound from './containers/NotFound'
 
 export default function App() {
+
   return (
     <div className="App">
       <Router>
@@ -27,16 +29,15 @@ export default function App() {
           </Navbar.Brand>
             <Nav className="mr-auto">
             <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="users">UsersList</Nav.Link>
+            <Nav.Link href="/users">UsersList</Nav.Link>
+            <Nav.Link href="/users/1">User</Nav.Link>
           </Nav>
         </Navbar>
         <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/users">
-            <UsersList />
-          </Route>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/users" component={UsersList} />
+          <Route path="/users/:name" component={UserPage} />
+          <Route path="*" component={NotFound} />
         </Switch>
       </Router>
     </div>
