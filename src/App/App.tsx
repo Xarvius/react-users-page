@@ -11,9 +11,18 @@ import Home from './containers/Home'
 import UsersList from './containers/UsersList'
 import UserPage from './containers/UserPage'
 import NotFound from './containers/NotFound'
+import { useQuery, gql } from '@apollo/client';
+
+const TEST = gql`
+  query getProfile{
+    profiles{
+      firstName
+    }
+}`;
 
 export default function App() {
-
+  const { loading, error, data } = useQuery(TEST);
+  console.log(data)
   return (
     <div className="App">
       <Router>
