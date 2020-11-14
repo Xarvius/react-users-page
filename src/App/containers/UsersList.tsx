@@ -27,20 +27,20 @@ export default function UsersList() {
     if (loading) return (<div>
       "loading"
     </div>);
-    const userList = data.profiles.map((value: queryResponse) => (
-      <Link key={value.alias} to={
-        {pathname: `/users/${value.alias}`}
-      }>
-      <Card>
-        <Card.Title>{value.firstName} {value.lastName}</Card.Title>
-        <Card.Subtitle>{value.email}</Card.Subtitle>
-      </Card>
-      </Link>
-    ));
-
     return (
       <div>
-        <Route>{userList}</Route>
+        <Route>
+          {data.profiles?.map((value: queryResponse) => (
+          <Card key={value.alias}>
+            <Link  to={
+              {pathname: `/users/${value.alias}`}
+            }>
+              <Card.Title>{value.firstName} {value.lastName}</Card.Title>
+            </Link>
+            <Card.Subtitle>{value.email}</Card.Subtitle>
+          </Card>
+          ))}
+         </Route>
       </div>
     );
   }
