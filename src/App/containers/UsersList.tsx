@@ -4,7 +4,7 @@ import { useQuery, gql } from '@apollo/client';
 import {Link, Route} from "react-router-dom";
 
 const GET_PROFILES = gql`
-  query getProfile{
+  query getProfiles{
     profiles{
         firstName,
         lastName,
