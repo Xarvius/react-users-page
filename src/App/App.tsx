@@ -29,10 +29,10 @@ export default function App() {
           </Navbar.Brand>
             <Nav className="mr-auto">
               <LinkContainer to="/">
-                <Nav.Link>Home</Nav.Link>
+                <Nav.Link>Strona główna</Nav.Link>
               </LinkContainer>
               <LinkContainer to="/users">
-                <Nav.Link>UsersList</Nav.Link>
+                <Nav.Link>Lista pracowników</Nav.Link>
               </LinkContainer>
               <LinkContainer to="/users/1">
                 <Nav.Link>User</Nav.Link>

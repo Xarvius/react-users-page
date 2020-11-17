@@ -23,8 +23,8 @@ interface queryResponse {
 }
 
 export default function UsersList() {
-    const { loading, data } = useQuery(GET_PROFILES);
-    if (loading) return (<div>
+    const { loading, data, error } = useQuery(GET_PROFILES);
+    if (loading || error) return (<div>
       "loading"
     </div>);
     return (
