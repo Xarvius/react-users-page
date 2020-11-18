@@ -3,6 +3,7 @@ import { useParams } from'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
 import { Tabs, Tab } from 'react-bootstrap'
 import About from '../components/About'
+import Materials from '../components/Materials'
 
 interface UrlParam {
   alias: string 
@@ -50,7 +51,7 @@ export default function UsersList() {
             <About {...data} />
           </Tab>
           <Tab eventKey="materiały" title="Materiały">
-            asd2
+            <Materials id={data?.profile?.user.id} />
           </Tab>
           <Tab eventKey="kontakt" title="Kontakt">
             asd3
@@ -59,4 +60,3 @@ export default function UsersList() {
       </div>
     );
   }
-  
