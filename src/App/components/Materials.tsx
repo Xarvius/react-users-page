@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useQuery, gql } from '@apollo/client';
 import Files from '../components/Files'
-import { Folder, Folder2Open, FileText } from 'react-bootstrap-icons'
+import { Folder, Folder2Open } from 'react-bootstrap-icons'
 
 interface foldersResponse {
   id: string

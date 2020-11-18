@@ -27,7 +27,7 @@ export default function Publications(props: {id?: string}) {
         "loading"
     </div>)
     return(
-        <Table striped bordered hover>
+        <Table striped bordered hover variant="dark">
             <thead>
                 <tr>
                 <th>Publikacje</th>

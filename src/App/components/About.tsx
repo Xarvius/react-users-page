@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Col, Image } from 'react-bootstrap'
+import { Col, Image, Card } from 'react-bootstrap'
 import { useQuery, gql } from '@apollo/client';
 import Publications from '../components/Publications'
 
@@ -38,12 +38,15 @@ export default function UsersList(props: {profile?: propsObject}) {
     return (
       <div>
         <Col>
+        <Card className="bg-dark text-white">
             <h2>
                 <Image src="" roundedCircle />
                 {basicInfo.profile?.firstName} {basicInfo.profile?.lastName} 
             </h2>
+            <p>{ data?.extras?.intro }</p>
+        </Card>
         </Col>
-        <p>{ data?.extras?.intro }</p>
+        
         <Publications id={basicInfo?.profile?.user.id} />
       </div>
     );

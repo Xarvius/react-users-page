@@ -46,7 +46,7 @@ export default function UsersList() {
       </div>)
     return (
       <div>
-        <Tabs defaultActiveKey="o mnie" id="user-tab" fill>
+        <Tabs defaultActiveKey="o mnie" id="user-tab" className="bg-dark text-white" fill>
           <Tab eventKey="o mnie" title="O mnie">
             <About {...data} />
           </Tab>

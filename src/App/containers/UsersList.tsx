@@ -32,7 +32,7 @@ export default function UsersList() {
       <div>
         <Route>
           {data.profiles?.map((value: queryResponse) => (
-          <Card key={value.alias}>
+          <Card key={value.alias} className="bg-dark text-white">
             <Link  to={
               {pathname: `/users/${value.alias}`}
             }>
