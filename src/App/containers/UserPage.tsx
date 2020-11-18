@@ -55,10 +55,7 @@ export default function UsersList() {
           <Tab eventKey="kontakt" title="Kontakt">
             asd3
           </Tab>
-        </Tabs>
-        <hr />
-        <h2>Param {alias}</h2>
-        
+        </Tabs>   
       </div>
     );
   }
