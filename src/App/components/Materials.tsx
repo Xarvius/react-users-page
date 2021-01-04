@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useQuery, gql } from '@apollo/client';
 import Files from '../components/Files'
 import { Folder, Folder2Open } from 'react-bootstrap-icons'
+import { CardColumns, Card, Row, Col } from 'react-bootstrap'
 
 interface foldersResponse {
   id: string
@@ -27,16 +28,20 @@ export default function UsersList(props: {id?: string}) {
     </div>)
     return (
       <div>
-        {
-          data?.folders?.map((details: foldersResponse) => (
-            <div key={details.id}>
-              <p onClick={() => setToggle(details.id)}>
-              {toggle === details.id ? <Folder2Open /> : <Folder />} {details.name}
-              </p>
-              {toggle === details.id ? <p><Files id={details.id} /></p> : null}
-            </div>
-          ))
-        }
+        <Row >
+          <Col sm={8}>
+            <CardColumns>
+              {
+                data?.folders?.map((details: foldersResponse) => (
+                  <Card key={details.id} onClick={() => setToggle(details.id)} className="bg-dark text-white folderCards" >
+                    <p>{toggle === details.id ? <Folder2Open size={50} /> : <Folder size={50} />} {details.name}</p>
+                  </Card>
+                ))
+              }
+            </CardColumns>
+          </Col>
+          <Col sm={4}>{toggle ? <Files id={toggle} />: "Lista plików"}</Col>
+        </Row>
       </div>
     );
   }

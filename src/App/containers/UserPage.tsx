@@ -1,9 +1,10 @@
 import React from 'react'
 import { useParams } from'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
-import { Tabs, Tab } from 'react-bootstrap'
+import { Tabs, Tab, Card, Row, Col } from 'react-bootstrap'
 import About from '../components/About'
 import Materials from '../components/Materials'
+import { Telephone, Globe, Envelope, PersonCircle } from 'react-bootstrap-icons'
 
 interface UrlParam {
   alias: string 
@@ -44,6 +45,7 @@ export default function UsersList() {
     const { loading, data, error } = useQuery<{profile: queryResponse}>(GET_PROFILE, {
       variables: { alias },
     });
+
     if (loading || error) return (
       <div>
         "loading"
@@ -54,11 +56,20 @@ export default function UsersList() {
           <Tab eventKey="o mnie" title="O mnie">
             <About {...data} />
           </Tab>
-          <Tab eventKey="materiały" title="Materiały">
+          <Tab eventKey="dla studentów" title="Dla studentów">
             <Materials id={data?.profile?.user.id} />
           </Tab>
           <Tab eventKey="kontakt" title="Kontakt">
-            asd3
+            <Card className="bg-dark text-white contact">
+              <Row>
+                <Col>
+                <p><Telephone size={55} /> {data?.profile.phone}</p>
+                <p><Envelope size={55} /> {data?.profile.email}</p>
+                <p><Globe size={55} /> {data?.profile.USOSlink}</p>
+                </Col>
+                <PersonCircle size={300}/>
+              </Row>
+            </Card>
           </Tab>
         </Tabs>   
       </div>

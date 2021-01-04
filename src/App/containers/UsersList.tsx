@@ -27,7 +27,6 @@ export default function UsersList() {
     if (loading || error) return (<div>
       "loading"
     </div>);
-
     return (
       <div>
         <Route>
@@ -36,7 +35,7 @@ export default function UsersList() {
             <Link  to={
               {pathname: `/users/${value.alias}`}
             }>
-              <Card.Title>{value.firstName} {value.lastName}</Card.Title>
+            <Card.Title>{value.firstName} {value.lastName}</Card.Title>
             </Link>
             <Card.Subtitle>{value.email}</Card.Subtitle>
           </Card>
