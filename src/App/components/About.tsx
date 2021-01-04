@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
-import { Col, Image, Card } from 'react-bootstrap'
+import { Col, Card, Row } from 'react-bootstrap'
 import { useQuery, gql } from '@apollo/client';
+import { Book } from 'react-bootstrap-icons'
 import Publications from '../components/Publications'
+import { Redirect } from "react-router-dom";
 
 interface propsObject {
   firstName: string,
   lastName: string,
   email: string,
+  phone: number,
+  USOSlink: string,
   qualification: string,
   user: userID
 }
@@ -14,12 +18,14 @@ interface userID {
   id: string
 }
 interface extrasResp {
-  intro: string
+  intro: string,
+  education: string
 }
 const GET_EXTRAS = gql`
   query getExtras($id: ID!){
             extras(id: $id) {
-              intro
+              intro,
+              education
             }
   }`;
 

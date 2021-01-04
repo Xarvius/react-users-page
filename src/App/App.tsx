@@ -34,9 +34,6 @@ export default function App() {
               <LinkContainer to="/users">
                 <Nav.Link>Lista pracowników</Nav.Link>
               </LinkContainer>
-              <LinkContainer to="/users/1">
-                <Nav.Link>User</Nav.Link>
-              </LinkContainer>
             </Nav>
         </Navbar>
         <Switch>

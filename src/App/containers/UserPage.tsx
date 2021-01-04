@@ -13,6 +13,8 @@ interface queryResponse {
   firstName: string,
   lastName: string,
   email: string,
+  phone: number,
+  USOSlink: string,
   qualification: string,
   user: userID
 }
@@ -28,6 +30,8 @@ const GET_PROFILE = gql`
                 firstName,
                 lastName,
                 email,
+                phone,
+                USOSlink,
                 qualification,
                 user{
                   id
