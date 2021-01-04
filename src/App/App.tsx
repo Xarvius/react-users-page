@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './assets/logo.svg';
+import logo from './assets/logo.png';
 import {
   BrowserRouter as Router,
   Switch,
@@ -24,7 +24,7 @@ export default function App() {
               width="30"
               height="30"
               className="d-inline-block align-top"
-              alt="React Bootstrap logo"
+              alt="logo"
             />
           </Navbar.Brand>
             <Nav className="mr-auto">
