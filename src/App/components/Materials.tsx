@@ -16,7 +16,7 @@ const GET_FOLDERS = gql`
             }
   }`;
 
-export default function UsersList(props: {id?: string}) {
+export default function UsersMaterials(props: {id?: string}) {
     const [userID] = useState(props);
     const [toggle, setToggle] = useState("")
     const { loading, data, error } = useQuery(GET_FOLDERS, {

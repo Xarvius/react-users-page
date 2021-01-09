@@ -40,7 +40,7 @@ const GET_PROFILE = gql`
             }
             }`;
 
-export default function UsersList() {
+export default function UsersPage() {
     const { alias } = useParams<UrlParam>();
     const { loading, data, error } = useQuery<{profile: queryResponse}>(GET_PROFILE, {
       variables: { alias },

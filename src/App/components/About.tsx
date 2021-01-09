@@ -32,7 +32,7 @@ const smallEducationTitle = (title: string) => {
   return title.toLowerCase() + "."
 }
 
-export default function UsersList(props: {profile?: propsObject}) {
+export default function UsersAbout(props: {profile?: propsObject}) {
     const [basicInfo] = useState(props);
     const { loading, data, error } = useQuery<{extras: extrasResp}>(GET_EXTRAS, {
       variables: {id: basicInfo?.profile?.user.id},
